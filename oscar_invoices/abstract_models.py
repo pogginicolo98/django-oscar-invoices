@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.db import models
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from oscar.apps.address.abstract_models import AbstractAddress
 from oscar.core.loading import get_class
 from phonenumber_field.modelfields import PhoneNumberField
