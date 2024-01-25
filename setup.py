@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='django-oscar-3.2.2-invoices',
-    version='0.2.2',
+    version='0.2.3',
     url='https://github.com/pogginicolo98/django-oscar-invoices.git',
     author='Nicolò Poggi',
     author_email='poggi.nicolo.bsnss@outlook.com',
