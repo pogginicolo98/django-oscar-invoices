@@ -67,6 +67,8 @@ class AbstractInvoice(models.Model):
     An Invoice.
     """
 
+    INVOICE_DIR = 'invoices'
+
     legal_entity = models.ForeignKey(
         'oscar_invoices.LegalEntity',
         on_delete=models.CASCADE,
@@ -82,9 +84,16 @@ class AbstractInvoice(models.Model):
 
     notes = models.TextField(_('Notes for invoice'), null=True, blank=False)
 
+    # document = models.FileField(
+    #     _('Document'), upload_to=app_settings.OSCAR_INVOICES_UPLOAD_FOLDER,
+    #     blank=True, null=True, max_length=255, storage=DocumentsStorage())
+
     document = models.FileField(
-        _('Document'), upload_to=app_settings.OSCAR_INVOICES_UPLOAD_FOLDER,
-        blank=True, null=True, max_length=255, storage=DocumentsStorage())
+        _('Document'),
+        null=True,
+        blank=True,
+        upload_to=INVOICE_DIR,
+    )
 
     date = models.DateField(auto_now_add=True)
 

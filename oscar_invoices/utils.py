@@ -55,7 +55,7 @@ class InvoiceCreator(object):
         """
         Create and save invoice document (as *.html file).
         """
-        return ContentFile(self.render_document(invoice, **kwargs))
+        return ContentFile(self.render_document(invoice, **kwargs).encode('utf-8'))
 
     def create_invoice_model(self, **kwargs):
         Invoice = self.get_invoice_model()
